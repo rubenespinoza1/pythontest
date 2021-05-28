@@ -6,8 +6,8 @@ class Node:
         self.left = None
     
     def print_node(self):
-        #print ("Current Node: %s, Left Child %s, Right Child %s" % (self.value, self.left.value if (self.left is not None) else "W/O Left Child", self.right.value if (self.right is not None) else "W/O Right Child"), end="\t")
-        print (self.value)
+        print ("Current Node: \n(%s)\n Left Child (%s)\t Right Child (%s)\t\n" % (self.value, self.left.value if (self.left is not None) else " ", self.right.value if (self.right is not None) else " "), end="\t\n")
+        #print (self.value)
 
 class Tree:
 
@@ -36,10 +36,8 @@ class Tree:
             current_node = self.root
         current_node.print_node()
         if (current_node.right is not None):
-            print("\\")
             self.diplay_tree(current_node.right)
         if (current_node.left is not None):
-            print("/")
             self.diplay_tree(current_node.left)
         
         
@@ -55,8 +53,9 @@ tree.insert_node(Node(13))
 tree.insert_node(Node(1296))
 tree.insert_node(Node(13))
 tree.insert_node(Node(123))
-tree.insert_node(Node(0))
+tree.insert_node(Node())
 tree.insert_node(Node(1))
+tree.insert_node(Node(100000983))
 
 
 tree.diplay_tree()
